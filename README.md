@@ -28,24 +28,27 @@ you just need to copy the files in router dir to elements/local and follow the i
 - Create two tap devices( tap0 and tap1 ) and add tap1 to bridge
 
 <code>
-
     tunctl -t tap0
-    tunctl -t tap1
-    ifconfig tap0 up
-    ifconfig tap1 up
-    brctl addif br0 tap1
     
+    tunctl -t tap1
+    
+    ifconfig tap0 up
+    
+    ifconfig tap1 up
+    
+    brctl addif br0 tap1
 </code>
 
 - Change the gateway to set tap0 as the default dev
 
 <code>
-
     if route del default via $GW dev br0
+    
     ip route del $NET dev br0
+    
     ip route add $NET dev tap0
+    
     ip route add default via $GW dev tp0
-
 </code>
 
 - Compile the tagger and run
