@@ -60,5 +60,5 @@ you just need to copy the files in router dir to elements/local and follow the i
 
 ## Evaluation
 
-We setup the evironment on 3 Dell T610 Servers: one router and two end nodes. We test the system performance with benchmark like Netperf and real applications like apache web server. The influence of D2FL on the network is less than 10% compared with the baseline(environment without D2FL). You can get the detailed evaluation results in our paper.
+We setup the environment on 3 Dell T610 Servers: one router and two end nodes. We test the system performance with benchmark like Netperf and real applications like apache web server. The influence of D2FL on the network is less than 10% compared with the baseline(environment without D2FL). You can get the detailed evaluation results in our paper.
   
