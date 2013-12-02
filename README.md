@@ -10,8 +10,13 @@
  |_____/____|_|    |______|
 
  </pre>
-                           
-## Overview
+## Background
+
+The existence of misbehavior routers has been a major concern in large-scale networks. The presence of such nodes in a network can lead to Byzantine failures including packet corruption, forging or delaying, which in turn can cause major performance issues. Data-plane fault localization (FL) is a hopeful way to solve this problem. However in practice there is no efficient coun- termeasure. In fact, the path-based FL fails to support dynamic routing, and the neighbor-based FL requires a centralized trusted administrative controller (AC), global clock synchronization in each router and storage over- head for caching packets.
+
+Therefore, in this work, we address all these prob- lems by introducing a dynamic distributed and low-cost model, D2FL, using random 2-hop neighborhood au- thentication. D2FL supports volatile path without requir- ing the AC or any global clock synchronization. Besides, D2FL requires only constant tens of KB for caching. That is also independent of the packet transmission rate. This is to be compared with the cache size of DynaFL which consumes several MBs and depend on the packet transmission rate. We evaluate its effect and the results show that D2 F L achieves low false positive and false negative rate with no more than 3% bandwidth overhead. We also propose a dynamic adaptive sampling algorithm model, to further reduce the overhead in authenticating packets.
+
+## Implementation Overview
 At the endpoint, we use tap device to catch the packets, add tag and redirect them to bridge.
 
 At the route node, we use click router modular to change the server to the router.
